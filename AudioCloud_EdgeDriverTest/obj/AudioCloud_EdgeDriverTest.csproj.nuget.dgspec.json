@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+        "projectName": "AudioCloud_EdgeDriverTest",
+        "projectPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+        "packagesPath": "C:\\Users\\luuph\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\luuph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[122.0.6261.6901, )"
+            },
+            "Selenium.WebDriver.MSEdgeDriver": {
+              "target": "Package",
+              "version": "[120.0.2210.144, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

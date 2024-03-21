@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioCloud_EdgeDriverTest", "AudioCloud_EdgeDriverTest\AudioCloud_EdgeDriverTest.csproj", "{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FD0A01F-611C-41F6-ACCE-91F14065FF60}
+	EndGlobalSection
+EndGlobal
