@@ -166,6 +166,45 @@
           "build/NUnit.props": {}
         }
       },
+      "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Selenium.Support/4.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.18.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Selenium.WebDriver/4.18.1": {
         "type": "package",
         "dependencies": {
@@ -229,6 +268,34 @@
         },
         "runtime": {
           "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.Packaging.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -529,6 +596,45 @@
           "build/NUnit.props": {}
         }
       },
+      "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Selenium.Support/4.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.18.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Selenium.WebDriver/4.18.1": {
         "type": "package",
         "dependencies": {
@@ -592,6 +698,34 @@
         },
         "runtime": {
           "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.Packaging.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -892,6 +1026,45 @@
           "build/NUnit.props": {}
         }
       },
+      "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Selenium.Support/4.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.18.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Selenium.WebDriver/4.18.1": {
         "type": "package",
         "dependencies": {
@@ -955,6 +1128,34 @@
         },
         "runtime": {
           "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.Packaging.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -1255,6 +1456,45 @@
           "build/NUnit.props": {}
         }
       },
+      "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Selenium.Support/4.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.18.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Selenium.WebDriver/4.18.1": {
         "type": "package",
         "dependencies": {
@@ -1318,6 +1558,34 @@
         },
         "runtime": {
           "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.Packaging.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -1618,6 +1886,45 @@
           "build/NUnit.props": {}
         }
       },
+      "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.0.0"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Selenium.Support/4.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.18.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Selenium.WebDriver/4.18.1": {
         "type": "package",
         "dependencies": {
@@ -1681,6 +1988,34 @@
         },
         "runtime": {
           "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Packaging/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "frameworkAssemblies": [
+          "WindowsBase",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.IO.Packaging.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -2333,6 +2668,51 @@
         "nunit.nuspec"
       ]
     },
+    "OfficeOpenXml.Core.ExcelPackage/1.0.0": {
+      "sha512": "LDhZ7K/zd7Zg3qndOacpdoYvyMbrnOm590g6fhS7NhR3zWkg90sz4NyOo1LGwq/9zianqjwV4gyJjtzLZ5JKww==",
+      "type": "package",
+      "path": "officeopenxml.core.excelpackage/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/OfficeOpenXml.Core.ExcelPackage.dll",
+        "lib/net46/OfficeOpenXml.Core.ExcelPackage.pdb",
+        "lib/netstandard1.6/OfficeOpenXml.Core.ExcelPackage.dll",
+        "lib/netstandard1.6/OfficeOpenXml.Core.ExcelPackage.pdb",
+        "officeopenxml.core.excelpackage.1.0.0.nupkg.sha512",
+        "officeopenxml.core.excelpackage.nuspec",
+        "src/OfficeOpenXml.Core.ExcelPackage/ElementFactory.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelCell.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelColumn.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelDefinedNames.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelExtensions.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelHeaderFooter.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelPackage.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelRow.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelStyles.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelWorkbook.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelWorksheet.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelWorksheetView.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExcelWorksheets.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/ExtensonMethods.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/OfficeProperties.cs",
+        "src/OfficeOpenXml.Core.ExcelPackage/Properties/AssemblyInfo.cs"
+      ]
+    },
+    "Selenium.Support/4.18.1": {
+      "sha512": "o83krRx6DklUtg4Onukp5SE9r6drfBDxzmGrFynICb8fTlXXZ75zdp8wp3+8sdcRaBCgpdlgQFCqoA6HOjzhow==",
+      "type": "package",
+      "path": "selenium.support/4.18.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/WebDriver.Support.dll",
+        "lib/netstandard2.0/WebDriver.Support.xml",
+        "selenium.support.4.18.1.nupkg.sha512",
+        "selenium.support.nuspec"
+      ]
+    },
     "Selenium.WebDriver/4.18.1": {
       "sha512": "x9Pkz+kzcZ6dToJFLiem36pp0xmIfu/DXFf3U7EaoFqdtYyLsDJB0e/v58NAghcPTrAwJMSduEAokBRFFCxAxg==",
       "type": "package",
@@ -2515,6 +2895,62 @@
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.IO.FileSystem.Primitives/4.0.1": {
+      "sha512": "kWkKD203JJKxJeE74p8aF8y4Qc9r9WQx4C0cHzHPrY3fv/L/IhWnyCHaFJ3H1QPOH6A93whlQ2vG5nHlBDvzWQ==",
+      "type": "package",
+      "path": "system.io.filesystem.primitives/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.IO.FileSystem.Primitives.dll",
+        "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.IO.FileSystem.Primitives.dll",
+        "ref/netstandard1.3/System.IO.FileSystem.Primitives.dll",
+        "ref/netstandard1.3/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/de/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/es/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/fr/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/it/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/ja/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/ko/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/ru/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/zh-hans/System.IO.FileSystem.Primitives.xml",
+        "ref/netstandard1.3/zh-hant/System.IO.FileSystem.Primitives.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.io.filesystem.primitives.4.0.1.nupkg.sha512",
+        "system.io.filesystem.primitives.nuspec"
+      ]
+    },
+    "System.IO.Packaging/4.0.0": {
+      "sha512": "taPqPWcAj/h6e/c+zIWIVe1ddJtpV6acC6g9GpolxUcIwUaH6zc0ZbFS8kkVzBkuWv76pMalKeTzfmHtfT1pXA==",
+      "type": "package",
+      "path": "system.io.packaging/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net46/System.IO.Packaging.dll",
+        "lib/netstandard1.3/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.dll",
+        "ref/netstandard1.3/System.IO.Packaging.dll",
+        "system.io.packaging.4.0.0.nupkg.sha512",
+        "system.io.packaging.nuspec"
       ]
     },
     "System.Memory/4.5.5": {
@@ -2782,26 +3218,28 @@
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "NUnit >= 4.1.0",
+      "OfficeOpenXml.Core.ExcelPackage >= 1.0.0",
+      "Selenium.Support >= 4.18.1",
       "Selenium.WebDriver >= 4.18.1",
       "Selenium.WebDriver.ChromeDriver >= 122.0.6261.6901",
       "Selenium.WebDriver.MSEdgeDriver >= 120.0.2210.144"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luuph\\.nuget\\packages\\": {}
+    "C:\\Users\\ACER-PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+      "projectUniqueName": "D:\\WebDriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
       "projectName": "AudioCloud_EdgeDriverTest",
-      "projectPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
-      "packagesPath": "C:\\Users\\luuph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\obj\\",
+      "projectPath": "D:\\WebDriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+      "packagesPath": "C:\\Users\\ACER-PC\\.nuget\\packages\\",
+      "outputPath": "D:\\WebDriver\\AudioCloud_EdgeDriverTest\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\luuph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2839,6 +3277,14 @@
           "NUnit": {
             "target": "Package",
             "version": "[4.1.0, )"
+          },
+          "OfficeOpenXml.Core.ExcelPackage": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Selenium.Support": {
+            "target": "Package",
+            "version": "[4.18.1, )"
           },
           "Selenium.WebDriver": {
             "target": "Package",
