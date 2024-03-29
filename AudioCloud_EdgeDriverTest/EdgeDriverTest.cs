@@ -10,6 +10,12 @@ using OfficeOpenXml;
 using System.Security.Cryptography;
 using IdentityModel.Client;
 using AudioCloud_EdgeDriverTest;
+using OpenQA.Selenium.Support.UI;
+using System.Security.Policy;
+using System.Threading;
+using OpenQA.Selenium.Interactions;
+
+
 
 namespace AudioCloud_ChromeDriverTest
 {
@@ -93,6 +99,8 @@ namespace AudioCloud_ChromeDriverTest
             return testData;
         }
 
+        // Search data 
+
         public static IEnumerable<object[]> ReadTestDataSearchFromExcel()
         {
             var testData = new List<object[]>();
@@ -110,6 +118,40 @@ namespace AudioCloud_ChromeDriverTest
             }
 
             return testData;
+        }
+
+        // Edit Information 
+        public static IEnumerable<object[]> ReadTestDataEditInformationFromExcel()
+        {
+            var testData = new List<object[]>();
+
+            using (var excelPackage = new ExcelPackage(new System.IO.FileInfo("DataTest.xlsx")))
+            {
+                var worksheet = excelPackage.Workbook.Worksheets["EditInformationDataTest"];
+                int rowCount = worksheet.Dimension.Rows;
+
+                for (int row = 1; row <= rowCount; row++)
+                {   
+                    var displayname = worksheet.Cells[row, 1].Value?.ToString();
+                    var address = worksheet.Cells[row, 2].Value?.ToString();
+                    var bio = worksheet.Cells[row, 3].Value?.ToString();
+                    var photo = worksheet.Cells[row, 4].Value?.ToString();
+
+                    testData.Add(new object[] { displayname, address, bio , photo});
+                }
+            }
+
+            return testData;
+        }
+
+        private void UpdateAddAudioToFavouriteTestResultInExcel(int row, string result)
+        {
+            using (var excelPackage = new ExcelPackage(new System.IO.FileInfo("DataTest.xlsx")))
+            {
+                var worksheet = excelPackage.Workbook.Worksheets["AddAudioToFavouriteDataTest"];
+                worksheet.Cells[row, 1].Value = result; 
+                excelPackage.Save();
+            }
         }
 
         [TestMethod]
@@ -197,7 +239,7 @@ namespace AudioCloud_ChromeDriverTest
             try
             {
                 Assert.IsTrue(_driver.Url.Contains("/search"), "Search failed");
-                UpdateTestResultInExcel("SearchDataTest", rowIndex, 2, "Passed");
+                UpdateTestResultInExcel("SearchDataTest", rowIndex, 2, "Passed");   
             }
             catch (AssertFailedException ex)
             {
@@ -211,6 +253,261 @@ namespace AudioCloud_ChromeDriverTest
         }
 
         [TestMethod]
+        [DynamicData(nameof(ReadTestDataEditInformationFromExcel), DynamicDataSourceType.Method)]
+
+        public async Task EditInformation(string displayname, string address, string bio, string photo)
+        {
+                       
+                _driver.Url = url + "/login";
+
+                _driver.FindElement(By.Id("account")).SendKeys("myaccount");
+                _driver.FindElement(By.Id("password")).SendKeys("123123");
+
+                _driver.FindElement(By.Id("submit")).Submit();
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
+                IAlert alert = _driver.SwitchTo().Alert();
+                alert.Accept();
+
+                _driver.Url = url + "/profile";
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
+                var editInput = _driver.FindElement(By.CssSelector("Span.edit-icon"));
+                editInput.Click();
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
+                var displayNameElement = _driver.FindElement(By.Id("displayname"));
+                var addressElement = _driver.FindElement(By.Id("address"));
+                var bioElement = _driver.FindElement(By.Id("bio"));
+                
+                //Clear
+                displayNameElement.Clear();
+                addressElement.Clear();
+                bioElement.Clear();
+                //photoElement.Clear();
+                               
+                await Task.Delay(TimeSpan.FromSeconds(2));
+
+                displayNameElement.SendKeys(displayname);
+                addressElement.SendKeys(address);
+                bioElement.SendKeys(bio);
+                _driver.FindElement(By.Id("UserPhoto")).SendKeys("C:\\Users\\ACER-PC\\Downloads\\cloud.jpg");
+                //photoElement.SendKeys(photo);
+
+                var buttonInput = _driver.FindElement(By.CssSelector("button.btn.btn-primary.mt-3"));
+                buttonInput.Click();
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
+                alert.Accept();
+
+                // Refresh the page to avoid stale elements
+                _driver.Navigate().Refresh();
+           
+                // Re-locate elements after page refresh
+                displayNameElement = _driver.FindElement(By.Id("displayname"));
+                addressElement = _driver.FindElement(By.Id("address"));
+                bioElement = _driver.FindElement(By.Id("bio"));
+                
+
+                var _displayName = displayNameElement.GetAttribute("value").ToString();
+                var _address = addressElement.GetAttribute("value").ToString();
+                var _bio = bioElement.GetAttribute("value").ToString();
+
+                var firstCondition = _displayName.Equals(displayname);
+                var secondCondition = _address.Equals(address);
+                var thirdCondition = _bio.Equals(bio);
+            try 
+            { 
+
+                Assert.IsTrue(firstCondition || secondCondition || thirdCondition, "Failed");
+                UpdateTestResultInExcel("EditInformationDataTest", rowIndex, 4, "Pass");
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.ToString());
+                UpdateTestResultInExcel("EditInformationDataTest", rowIndex, 4, "Failed");
+            }
+        }
+
+        
+
+        //Xóa bài hát 
+
+        [TestMethod]
+        public async Task DeleteSong()
+        {
+            _driver.Url = url + "/login";
+
+            _driver.FindElement(By.Id("account")).SendKeys("myaccount");
+            _driver.FindElement(By.Id("password")).SendKeys("123123");
+
+            _driver.FindElement(By.Id("submit")).Submit();
+            await Task.Delay(TimeSpan.FromSeconds(5));
+
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();
+
+            _driver.Url = url + "/profile";
+            await Task.Delay(TimeSpan.FromSeconds(5));
+            //*[@id="long-menu"]/div[3]/ul/li[2]
+
+            var chamInput = _driver.FindElement(By.CssSelector("#long-button > svg"));
+            chamInput.Click();
+            Thread.Sleep(1000);
+
+            Actions actions = new Actions(_driver);
+            actions.SendKeys(Keys.End).Perform();            
+            Thread.Sleep(5000);
+
+            var deleteInput = _driver.FindElement(By.CssSelector("#long-menu > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiMenu-paper.MuiPopover-paper.MuiMenu-paper.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper > ul > li:nth-child(2)"));
+            deleteInput.Click();
+            await Task.Delay(TimeSpan.FromSeconds(5));
+            alert.Accept();
+            await Task.Delay(TimeSpan.FromSeconds(5));
+        }
+
+
+
+        [TestMethod]
+        public async Task SignOut()
+        {
+            _driver.Url = url + "/login";
+
+            _driver.FindElement(By.Id("account")).SendKeys("myaccount");
+            _driver.FindElement(By.Id("password")).SendKeys("123123");
+
+            _driver.FindElement(By.Id("submit")).Submit();
+            await Task.Delay(TimeSpan.FromSeconds(5));
+
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();
+            
+            await Task.Delay(TimeSpan.FromSeconds(3));
+            _driver.Manage().Window.Maximize();
+            await Task.Delay(TimeSpan.FromSeconds(5));
+
+            var profileInput = _driver.FindElement(By.XPath("//*[@id=\"ftco-navbar\"]/div/form/div/button"));
+            profileInput.Click();
+            Thread.Sleep(2000);
+
+            var logoutInput = _driver.FindElement(By.XPath("//*[@id=\"navbar-links\"]/li/div/a[4]"));
+            logoutInput.Click();
+            Thread.Sleep(2000);
+
+        }
+        [TestMethod]
+        // Thêm vào danh sách yêu thích 
+        public async Task AddAudioToFavourite()
+        {
+            _driver.Url = url + "/login";
+
+            _driver.FindElement(By.Id("account")).SendKeys("myaccount");
+            _driver.FindElement(By.Id("password")).SendKeys("123123");
+
+            _driver.FindElement(By.Id("submit")).Submit();
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();            
+            _driver.Manage().Window.Maximize();
+            Thread.Sleep(3000);
+            
+            _driver.Url = url + "/details/AUDIO10448585";
+            Thread.Sleep(2000);
+
+            var playlistButton = _driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/button[2]/div[2]"));
+            playlistButton.Click();
+            Thread.Sleep(2000);
+
+            var addplaylistButton = _driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/ul[1]/div[1]/div[1]/div[1]/button[1]"));
+            addplaylistButton.Click();
+            Thread.Sleep(3000);          
+
+            _driver.Url = url + "/profile";
+            Thread.Sleep(3000);
+
+            var danhsachphatButton = _driver.FindElement(By.CssSelector("#root > div > div.card.card-body.mx-3.mx-md-4.mt-n6 > div.row.gx-4.mb-2 > div.col-md-6.col-md-6.my-sm-auto.ms-sm-auto.me-sm-0.mx-auto.mt-3 > div > ul > li:nth-child(2) > a"));
+            danhsachphatButton.Click();
+            Thread.Sleep(3000);
+
+            var danhsachplalistButton = _driver.FindElement(By.CssSelector("Capa_1"));
+            danhsachplalistButton.Click();
+            Thread.Sleep(3000);
+
+            try
+            {
+                Assert.IsTrue(_driver.Url.Contains("/profile"), "Yêu thích thành công ");
+                UpdateAddAudioToFavouriteTestResultInExcel(rowIndex, "Passed");
+            }
+            catch (AssertFailedException ex)
+            {
+                UpdateAddAudioToFavouriteTestResultInExcel(rowIndex, "Failed");
+                throw ex;
+            }
+            finally
+            {
+                rowIndex++;
+            }
+
+        }
+
+        [TestMethod]
+
+        public async Task AddAudioToFavouriteAndCreate()
+        {
+            _driver.Url = url + "/login";
+
+            _driver.FindElement(By.Id("account")).SendKeys("myaccount");
+            _driver.FindElement(By.Id("password")).SendKeys("123123");
+
+            _driver.FindElement(By.Id("submit")).Submit();
+            await Task.Delay(TimeSpan.FromSeconds(3));
+
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();
+            _driver.Manage().Window.Maximize();
+            Thread.Sleep(3000);
+
+            _driver.Url = url + "/details/AUDIO10448585";
+            Thread.Sleep(2000);
+
+            var playlistButton = _driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/button[2]/div[2]"));
+            playlistButton.Click();
+            Thread.Sleep(2000);
+
+            var addplaylistButton = _driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/ul[1]/div[1]/div[1]/div[1]/button[1]"));
+            addplaylistButton.Click();
+            Thread.Sleep(3000);
+                
+            _driver.Url = url + "/profile";
+            Thread.Sleep(3000);
+
+            var danhsachphatButton = _driver.FindElement(By.CssSelector("#root > div > div.card.card-body.mx-3.mx-md-4.mt-n6 > div.row.gx-4.mb-2 > div.col-md-6.col-md-6.my-sm-auto.ms-sm-auto.me-sm-0.mx-auto.mt-3 > div > ul > li:nth-child(2) > a"));
+            danhsachphatButton.Click();
+            Thread.Sleep(3000);
+
+            var danhsachplalistButton = _driver.FindElement(By.CssSelector("Capa_1"));
+            danhsachplalistButton.Click();
+            Thread.Sleep(3000);
+
+            try
+            {
+                Assert.IsTrue(_driver.Url.Contains("/profile"), "Yêu thích thành công ");
+                UpdateAddAudioToFavouriteTestResultInExcel(rowIndex, "Passed");
+            }
+            catch (AssertFailedException ex)
+            {
+                UpdateAddAudioToFavouriteTestResultInExcel(rowIndex, "Failed");
+                throw ex;
+            }
+            finally
+            {
+                rowIndex++;
+            }
+
+        }
+
+        [TestMethod]
         public async Task PlayAudio()
         {
             _driver.Url = url + "/home";
@@ -219,6 +516,12 @@ namespace AudioCloud_ChromeDriverTest
 
             var aplayer = _driver.FindElement(By.Id("aplayer"));
             Assert.IsTrue(aplayer.Displayed, "Failed");
+
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();
         }
+
+        
+
     }
 }
