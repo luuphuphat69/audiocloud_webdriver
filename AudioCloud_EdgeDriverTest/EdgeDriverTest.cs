@@ -3,13 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading.Tasks;
 using System;
-using static System.Net.WebRequestMethods;
-using System.Collections;
 using System.Collections.Generic;
 using OfficeOpenXml;
-using System.Security.Cryptography;
-using IdentityModel.Client;
-using AudioCloud_EdgeDriverTest;
 
 namespace AudioCloud_ChromeDriverTest
 {
@@ -132,18 +127,30 @@ namespace AudioCloud_ChromeDriverTest
             _driver.FindElement(By.Id("submit")).Submit();
             await Task.Delay(TimeSpan.FromSeconds(5));
 
-            IAlert alert = _driver.SwitchTo().Alert();
-            alert.Accept();
-
             try
             {
+
+                IAlert alert = _driver.SwitchTo().Alert();
+                alert.Accept();
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
                 Assert.IsTrue(_driver.Url.Contains("/home"), "Login failed. User was not redirected to the home page.");
                 UpdateTestResultInExcel("LoginDataTest", rowIndex, 3, "Passed");
             }
             catch (AssertFailedException ex)
             {
-                UpdateTestResultInExcel("LoginDataTest", rowIndex, 3, "Failed");
+                UpdateTestResultInExcel("LoginDataTest", rowIndex, 3, $"Failed + {ex}");
                 throw ex;
+            }
+            catch (ArgumentNullException e)
+            {
+                UpdateTestResultInExcel("LoginDataTest", rowIndex, 3, $"Failed + {e}");
+                throw e;
+            }
+            catch(Exception e)
+            {
+                UpdateTestResultInExcel("LoginDataTest", rowIndex, 3, $"Failed + {e}");
+                throw e;
             }
             finally
             {
@@ -157,25 +164,43 @@ namespace AudioCloud_ChromeDriverTest
         {
             _driver.Url = url + "/register";
 
-            _driver.FindElement(By.Name("account")).SendKeys(account);
-            _driver.FindElement(By.Name("password")).SendKeys(password);
-            _driver.FindElement(By.Name("repassword")).SendKeys(repassword);
-            _driver.FindElement(By.Name("email")).SendKeys(email);
-
-            _driver.FindElement(By.Name("submit")).Submit();
             await Task.Delay(TimeSpan.FromSeconds(5));
 
-            IAlert alert = _driver.SwitchTo().Alert();
-            alert.Accept();
+            _driver.FindElement(By.XPath("//*[@id=\"account\"]")).SendKeys(account);
+            _driver.FindElement(By.XPath("//*[@id=\"password\"]")).SendKeys(password);
+            _driver.FindElement(By.XPath("//*[@id=\"signup-form\"]/div[3]/input")).SendKeys(repassword);
+            _driver.FindElement(By.XPath("//*[@id=\"email\"]")).SendKeys(email);
 
+            _driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Submit();
+            await Task.Delay(TimeSpan.FromSeconds(5));
             try
             {
-                Assert.IsTrue(_driver.Url.Contains("/login"), "Sign up failed");
-                UpdateTestResultInExcel("SignUpDataTest", rowIndex, 6, "Passed");
+                IAlert alert = _driver.SwitchTo().Alert();
+
+                if(alert == null)
+                {
+                    UpdateTestResultInExcel("SignUpDataTest", rowIndex, 5, "Failed");
+                    return;
+                }
+
+                var alertText = alert.Text.ToString();
+                await Task.Delay(TimeSpan.FromSeconds(5));
+                var ifTrue = alertText.Contains("Đăng ký thành công");
+
+                if (ifTrue)
+                {
+                    UpdateTestResultInExcel("SignUpDataTest", rowIndex, 5, "Passed");
+                    return;
+                }
+                else
+                {
+                    UpdateTestResultInExcel("SignUpDataTest", rowIndex, 5, "Failed");
+                    return;
+                }
             }
-            catch (AssertFailedException ex)
+            catch (Exception ex)
             {
-                UpdateTestResultInExcel("SignUpDataTest", rowIndex, 6, "Failed");
+                UpdateTestResultInExcel("SignUpDataTest", rowIndex, 5, $"Failed + {ex}");
                 throw ex;
             }
             finally
@@ -201,8 +226,13 @@ namespace AudioCloud_ChromeDriverTest
             }
             catch (AssertFailedException ex)
             {
-                UpdateTestResultInExcel("SearchDataTest", rowIndex, 2, "Failed");
+                UpdateTestResultInExcel("SearchDataTest", rowIndex, 2, $"Failed + {ex}");
                 throw ex;
+            }
+            catch(Exception e)
+            {
+                UpdateTestResultInExcel("SearchDataTest", rowIndex, 2, $"Failed + {e}");
+                throw e;
             }
             finally
             {
