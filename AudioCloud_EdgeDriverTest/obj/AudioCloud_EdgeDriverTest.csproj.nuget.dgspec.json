@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {}
+    "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {
+    "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
         "projectName": "AudioCloud_EdgeDriverTest",
-        "projectPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
-        "packagesPath": "C:\\Users\\luuph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luuph\\source\\repos\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\luuph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +33,11 @@
           "net472": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -36,7 +45,7 @@
           "dependencies": {
             "EPPlus": {
               "target": "Package",
-              "version": "[7.0.9, )"
+              "version": "[7.1.0, )"
             },
             "IdentityModel": {
               "target": "Package",
@@ -44,11 +53,11 @@
             },
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[2.2.10, )"
+              "version": "[3.2.2, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[2.2.10, )"
+              "version": "[3.2.2, )"
             },
             "NUnit": {
               "target": "Package",
@@ -56,15 +65,15 @@
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.18.1, )"
+              "version": "[4.19.0, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[122.0.6261.6901, )"
+              "version": "[123.0.6312.8600, )"
             },
             "Selenium.WebDriver.MSEdgeDriver": {
               "target": "Package",
-              "version": "[120.0.2210.144, )"
+              "version": "[122.0.2365.63, )"
             }
           }
         }

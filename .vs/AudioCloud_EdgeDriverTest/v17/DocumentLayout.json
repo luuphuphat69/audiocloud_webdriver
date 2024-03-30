@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}|AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj|c:\\users\\asus\\source\\repos\\audiocloud_webdriver\\audiocloud_edgedrivertest\\edgedrivertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBD72B9-E92D-408B-809D-F77BED2F6DE8}|AudioCloud_EdgeDriverTest\\AudioCloud_EdgeDriverTest.csproj|solutionrelative:audiocloud_edgedrivertest\\edgedrivertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 250,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EdgeDriverTest.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\EdgeDriverTest.cs",
+              "RelativeDocumentMoniker": "AudioCloud_EdgeDriverTest\\EdgeDriverTest.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\audiocloud_webdriver\\AudioCloud_EdgeDriverTest\\EdgeDriverTest.cs*",
+              "RelativeToolTip": "AudioCloud_EdgeDriverTest\\EdgeDriverTest.cs*",
+              "ViewState": "AQIAAGYBAAAAAAAAAAAAAHgBAADHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:35:09.165Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 133,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
